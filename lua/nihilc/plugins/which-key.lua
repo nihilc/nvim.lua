@@ -9,7 +9,7 @@ return {
       { "<leader>u", group = "ui" },
     },
     win = {
-      title = false
+      title = true,
     },
     icons = {
       mappings = false,
