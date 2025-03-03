@@ -37,30 +37,22 @@ return {
       {
         desc = "Find Files",
         lhs = "<leader>ff",
-        rhs = function()
-          builtin.find_files()
-        end
+        rhs = builtin.find_files
       },
       {
         desc = "Find Files (Git Files)",
         lhs = "<leader>fF",
-        rhs = function()
-          builtin.git_files()
-        end
+        rhs = builtin.git_files
       },
       {
         desc = "Find Buffer",
         lhs = "<leader>fb",
-        rhs = function()
-          builtin.buffers()
-        end
+        rhs = builtin.buffers
       },
       {
         desc = "Live Grep",
         lhs = "<leader>fg",
-        rhs = function()
-          builtin.live_grep()
-        end
+        rhs = builtin.live_grep
       },
       {
         desc = "Live Grep (Git Root)",
@@ -114,16 +106,12 @@ return {
       {
         desc = "Help Tags",
         lhs = "<leader>ht",
-        rhs = function()
-          builtin.help_tags()
-        end
+        rhs = builtin.help_tags
       },
       {
         desc = "Help Keymaps",
         lhs = "<leader>hk",
-        rhs = function()
-          builtin.keymaps()
-        end
+        rhs = builtin.keymaps
       },
     })
   end,
