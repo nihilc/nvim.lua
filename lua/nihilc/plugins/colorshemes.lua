@@ -13,6 +13,7 @@ return {
           ["TelescopePromptBorder"] = { fg = "$grey" },
           ["TelescopePreviewBorder"] = { fg = "$grey" },
           ["TelescopeResultsBorder"] = { fg = "$grey" },
+          ["NvimTreeIndentMarker"] = { fg = "$bg1" },
         },
       })
       require("onedark").load()
