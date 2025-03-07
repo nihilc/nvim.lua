@@ -1,10 +1,9 @@
 local M = {}
 
 M.group = vim.api.nvim_create_augroup("nihilc", {})
+M.create = vim.api.nvim_create_autocmd
 
-local autocmd = vim.api.nvim_create_autocmd
-
-autocmd("TextYankPost", {
+M.create("TextYankPost", {
   desc = "Highlight when yanking text",
   group = M.group,
   callback = function()
@@ -12,13 +11,13 @@ autocmd("TextYankPost", {
   end,
 })
 
-autocmd("BufWritePre", {
+M.create("BufWritePre", {
   desc = "Remove white spaces before save",
   group = M.group,
   command = "%s/\\s\\+$//e"
 })
 
-autocmd("TermOpen", {
+M.create("TermOpen", {
   desc    = "Start terminal in insert mode",
   group   = M.group,
   command = "startinsert | set winfixheight | setlocal nospell"
