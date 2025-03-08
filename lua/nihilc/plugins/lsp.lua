@@ -35,6 +35,8 @@ return {
         "pyright",
         "lua_ls",
         "gopls",
+        -- Docs/Config
+        "texlab",
       },
       automatic_installation = false,
       handlers = {

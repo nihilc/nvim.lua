@@ -18,6 +18,7 @@ return {
         "lua",
         "go",
         -- Docs / Config
+        "latex",
         "markdown",
         "markdown_inline",
         "vimdoc",
