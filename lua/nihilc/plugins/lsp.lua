@@ -48,8 +48,6 @@ return {
       }
     })
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single", })
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
     vim.diagnostic.config({
       float = {
         style = "minimal",
@@ -67,6 +65,7 @@ return {
           return severity_map[diagnostic.severity].text .. ": ", severity_map[diagnostic.severity].hl
         end,
       },
+      virtual_text = true,
     })
 
     local autocmd = require("nihilc.autocmd")
@@ -76,18 +75,38 @@ return {
       callback = function(e)
         local opts = { buffer = e.buf }
         keymaps.set({
-          { lhs = "K",          rhs = vim.lsp.buf.hover,          desc = "Hover Symbol",           opts = opts },
-          { lhs = "L",          rhs = vim.lsp.buf.signature_help, desc = "Hover Signature Symbol", opts = opts },
-          { lhs = "gd",         rhs = vim.lsp.buf.definition,     desc = "Go Definition",          opts = opts },
-          { lhs = "gD",         rhs = vim.lsp.buf.declaration,    desc = "Go Declaration",         opts = opts },
-          { lhs = "gr",         rhs = vim.lsp.buf.references,     desc = "Go References",          opts = opts },
-          { lhs = 'gi',         rhs = vim.lsp.buf.implementation, desc = "Go Implementation",      opts = opts },
-          { lhs = "<leader>lr", rhs = vim.lsp.buf.rename,         desc = "Lsp Rename",             opts = opts },
-          { lhs = "<leader>lf", rhs = vim.lsp.buf.format,         desc = "Lsp Format",             opts = opts },
-          { lhs = "<leader>la", rhs = vim.lsp.buf.code_action,    desc = "Lsp Code Action",        opts = opts },
-          { lhs = "<leader>ld", rhs = vim.diagnostic.open_float,  desc = "Lsp Diagnostics",        opts = opts },
-          { lhs = "]d",         rhs = vim.diagnostic.goto_next,   desc = "Next Diagnostic",        opts = opts },
-          { lhs = "[d",         rhs = vim.diagnostic.goto_prev,   desc = "Prev Diagnostic",        opts = opts }
+          {
+            lhs = "K",
+            rhs = function() vim.lsp.buf.hover({ border = "single" }) end,
+            desc = "Hover Symbol",
+            opts = opts
+          },
+          {
+            lhs = "L",
+            rhs = function() vim.lsp.buf.signature_help({ border = "single" }) end,
+            desc = "Hover Signature Symbol",
+            opts = opts
+          },
+          { lhs = "gd",         rhs = vim.lsp.buf.definition,     desc = "Go Definition",     opts = opts },
+          { lhs = "gD",         rhs = vim.lsp.buf.declaration,    desc = "Go Declaration",    opts = opts },
+          { lhs = "gr",         rhs = vim.lsp.buf.references,     desc = "Go References",     opts = opts },
+          { lhs = 'gi',         rhs = vim.lsp.buf.implementation, desc = "Go Implementation", opts = opts },
+          { lhs = "<leader>lr", rhs = vim.lsp.buf.rename,         desc = "Lsp Rename",        opts = opts },
+          { lhs = "<leader>lf", rhs = vim.lsp.buf.format,         desc = "Lsp Format",        opts = opts },
+          { lhs = "<leader>la", rhs = vim.lsp.buf.code_action,    desc = "Lsp Code Action",   opts = opts },
+          { lhs = "<leader>ld", rhs = vim.diagnostic.open_float,  desc = "Lsp Diagnostics",   opts = opts },
+          {
+            lhs = "]d",
+            rhs = function() vim.diagnostic.jump({ count = 1 }) end,
+            desc = "Next Diagnostic",
+            opts = opts
+          },
+          {
+            lhs = "[d",
+            rhs = function() vim.diagnostic.jump({ count = -1 }) end,
+            desc = "Prev Diagnostic",
+            opts = opts
+          }
         })
       end
     })
