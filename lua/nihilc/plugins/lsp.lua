@@ -7,7 +7,7 @@ return {
     {
       "folke/lazydev.nvim",
       ft = "lua",
-      opts = { library = { { path = "${3rd}/luv/library", words = { "vim%.uv" } } } }
+      opts = { library = { { path = "${3rd}/luv/library", words = { "vim%.uv" } } } },
     },
   },
   config = function()
@@ -15,13 +15,15 @@ return {
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
 
-    local capabilities = vim.tbl_deep_extend("force", {},
+    local capabilities = vim.tbl_deep_extend(
+      "force",
+      {},
       vim.lsp.protocol.make_client_capabilities(),
       require("cmp_nvim_lsp").default_capabilities()
     )
 
     mason.setup({
-      ui = { border = "single" }
+      ui = { border = "single" },
     })
     mason_lspconfig.setup({
       ensure_installed = {
@@ -42,10 +44,10 @@ return {
       handlers = {
         function(server_name)
           lspconfig[server_name].setup({
-            capabilities = capabilities
+            capabilities = capabilities,
           })
-        end
-      }
+        end,
+      },
     })
 
     vim.diagnostic.config({
@@ -77,37 +79,45 @@ return {
         keymaps.set({
           {
             lhs = "K",
-            rhs = function() vim.lsp.buf.hover({ border = "single" }) end,
+            rhs = function()
+              vim.lsp.buf.hover({ border = "single" })
+            end,
             desc = "Hover Symbol",
-            opts = opts
+            opts = opts,
           },
           {
             lhs = "L",
-            rhs = function() vim.lsp.buf.signature_help({ border = "single" }) end,
+            rhs = function()
+              vim.lsp.buf.signature_help({ border = "single" })
+            end,
             desc = "Hover Signature Symbol",
-            opts = opts
+            opts = opts,
           },
-          { lhs = "gd",         rhs = vim.lsp.buf.definition,     desc = "Go Definition",     opts = opts },
-          { lhs = "gD",         rhs = vim.lsp.buf.declaration,    desc = "Go Declaration",    opts = opts },
-          { lhs = "gr",         rhs = vim.lsp.buf.references,     desc = "Go References",     opts = opts },
-          { lhs = 'gi',         rhs = vim.lsp.buf.implementation, desc = "Go Implementation", opts = opts },
-          { lhs = "<leader>lr", rhs = vim.lsp.buf.rename,         desc = "Lsp Rename",        opts = opts },
-          { lhs = "<leader>la", rhs = vim.lsp.buf.code_action,    desc = "Lsp Code Action",   opts = opts },
-          { lhs = "<leader>ld", rhs = vim.diagnostic.open_float,  desc = "Lsp Diagnostics",   opts = opts },
+          { lhs = "gd", rhs = vim.lsp.buf.definition, desc = "Go Definition", opts = opts },
+          { lhs = "gD", rhs = vim.lsp.buf.declaration, desc = "Go Declaration", opts = opts },
+          { lhs = "gr", rhs = vim.lsp.buf.references, desc = "Go References", opts = opts },
+          { lhs = "gi", rhs = vim.lsp.buf.implementation, desc = "Go Implementation", opts = opts },
+          { lhs = "<leader>lr", rhs = vim.lsp.buf.rename, desc = "Lsp Rename", opts = opts },
+          { lhs = "<leader>la", rhs = vim.lsp.buf.code_action, desc = "Lsp Code Action", opts = opts },
+          { lhs = "<leader>ld", rhs = vim.diagnostic.open_float, desc = "Lsp Diagnostics", opts = opts },
           {
             lhs = "]d",
-            rhs = function() vim.diagnostic.jump({ count = 1 }) end,
+            rhs = function()
+              vim.diagnostic.jump({ count = 1 })
+            end,
             desc = "Next Diagnostic",
-            opts = opts
+            opts = opts,
           },
           {
             lhs = "[d",
-            rhs = function() vim.diagnostic.jump({ count = -1 }) end,
+            rhs = function()
+              vim.diagnostic.jump({ count = -1 })
+            end,
             desc = "Prev Diagnostic",
-            opts = opts
-          }
+            opts = opts,
+          },
         })
-      end
+      end,
     })
-  end
+  end,
 }

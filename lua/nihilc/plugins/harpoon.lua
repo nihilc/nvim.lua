@@ -9,25 +9,33 @@ return {
     harpoon:setup()
     keymaps.set({
       {
-        desc = "Harpoon Quick Menu",
         lhs = "<leader>e",
-        rhs = function() harpoon.ui:toggle_quick_menu(harpoon:list()) end
+        rhs = function()
+          harpoon.ui:toggle_quick_menu(harpoon:list())
+        end,
+        desc = "Harpoon Quick Menu",
       },
       {
-        desc = "Harpoon Add",
         lhs = "<leader>a",
-        rhs = function() harpoon:list():add() end
+        rhs = function()
+          harpoon:list():add()
+        end,
+        desc = "Harpoon Add",
       },
       {
-        desc = "Harpoon Next",
         lhs = "<leader>n",
-        rhs = function() harpoon:list():next() end
+        rhs = function()
+          harpoon:list():next()
+        end,
+        desc = "Harpoon Next",
       },
       {
-        desc = "Harpoon Prev",
         lhs = "<leader>p",
-        rhs = function() harpoon:list():prev() end
+        rhs = function()
+          harpoon:list():prev()
+        end,
+        desc = "Harpoon Prev",
       },
     })
-  end
+  end,
 }

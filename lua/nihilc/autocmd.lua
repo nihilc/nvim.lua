@@ -14,13 +14,13 @@ M.create("TextYankPost", {
 M.create("BufWritePre", {
   desc = "Remove white spaces before save",
   group = M.group,
-  command = "%s/\\s\\+$//e"
+  command = "%s/\\s\\+$//e",
 })
 
 M.create("TermOpen", {
-  desc    = "Start terminal in insert mode",
-  group   = M.group,
-  command = "startinsert | set winfixheight | setlocal nospell"
+  desc = "Start terminal in insert mode",
+  group = M.group,
+  command = "startinsert | set winfixheight | setlocal nospell",
 })
 
 return M

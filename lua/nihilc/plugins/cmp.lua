@@ -12,7 +12,7 @@ return {
       build = "make install_jsregexp",
     },
     "rafamadriz/friendly-snippets",
-    'saadparwaiz1/cmp_luasnip',
+    "saadparwaiz1/cmp_luasnip",
   },
   config = function()
     local cmp = require("cmp")
@@ -23,7 +23,7 @@ return {
     cmp.setup({
       snippet = {
         expand = function(args)
-          require('luasnip').lsp_expand(args.body)
+          require("luasnip").lsp_expand(args.body)
         end,
       },
       window = {
@@ -31,38 +31,46 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert({
-        ['<c-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<c-e>'] = cmp.mapping.abort(),
-        ['<c-space>'] = cmp.mapping.complete(),
-        ['<tab>'] = cmp.mapping(function(fallback)
-          if luasnip.locally_jumpable(1) then luasnip.jump(1) else fallback() end
+        ["<c-y>"] = cmp.mapping.confirm({ select = true }),
+        ["<c-e>"] = cmp.mapping.abort(),
+        ["<c-space>"] = cmp.mapping.complete(),
+        ["<tab>"] = cmp.mapping(function(fallback)
+          if luasnip.locally_jumpable(1) then
+            luasnip.jump(1)
+          else
+            fallback()
+          end
         end, { "i", "s" }),
-        ['<s-tab>'] = cmp.mapping(function(fallback)
-          if luasnip.locally_jumpable(-1) then luasnip.jump(-1) else fallback() end
+        ["<s-tab>"] = cmp.mapping(function(fallback)
+          if luasnip.locally_jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
         end, { "i", "s" }),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
       }, {
-        { name = 'buffer' },
-      })
+        { name = "buffer" },
+      }),
     })
 
-    cmp.setup.cmdline({ '/', '?' }, {
+    cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = 'buffer' }
-      }
+        { name = "buffer" },
+      },
     })
 
-    cmp.setup.cmdline(':', {
+    cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
-        { name = 'path' }
+        { name = "path" },
       }, {
-        { name = 'cmdline' }
+        { name = "cmdline" },
       }),
     })
-  end
+  end,
 }

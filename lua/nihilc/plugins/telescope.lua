@@ -1,7 +1,7 @@
 return {
-  'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  "nvim-telescope/telescope.nvim",
+  tag = "0.1.8",
+  dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     local telescope = require("telescope")
     local builtin = require("telescope.builtin")
@@ -28,47 +28,30 @@ return {
           },
           n = {
             ["<m-p>"] = require("telescope.actions.layout").toggle_preview,
-          }
-        }
-      }
+          },
+        },
+      },
     })
 
     keymaps.set({
+      { lhs = "<leader>ff", rhs = builtin.find_files, desc = "Find Files" },
+      { lhs = "<leader>fF", rhs = builtin.git_files, desc = "Find Files (Git Files)" },
+      { lhs = "<leader>fb", rhs = builtin.buffers, desc = "Find Buffer" },
+      { lhs = "<leader>fg", rhs = builtin.live_grep, desc = "Live Grep" },
       {
-        desc = "Find Files",
-        lhs = "<leader>ff",
-        rhs = builtin.find_files
-      },
-      {
-        desc = "Find Files (Git Files)",
-        lhs = "<leader>fF",
-        rhs = builtin.git_files
-      },
-      {
-        desc = "Find Buffer",
-        lhs = "<leader>fb",
-        rhs = builtin.buffers
-      },
-      {
-        desc = "Live Grep",
-        lhs = "<leader>fg",
-        rhs = builtin.live_grep
-      },
-      {
-        desc = "Live Grep (Git Root)",
         lhs = "<leader>fG",
         rhs = function()
           local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
           if git_root and #git_root > 0 then
             builtin.live_grep({
               cwd = git_root,
-              prompt_title = "Live Grep (Git Root)"
+              prompt_title = "Live Grep (Git Root)",
             })
           end
-        end
+        end,
+        desc = "Live Grep (Git Root)",
       },
       {
-        desc = "Find Current word",
         lhs = "<leader>fw",
         rhs = function()
           local word = vim.fn.expand("<cword>")
@@ -76,17 +59,17 @@ return {
           if git_root and #git_root > 0 then
             builtin.grep_string({
               cwd = git_root,
-              search = word
+              search = word,
             })
           else
             builtin.grep_string({
-              search = word
+              search = word,
             })
           end
-        end
+        end,
+        desc = "Find Current word",
       },
       {
-        desc = "Find Current WORD",
         lhs = "<leader>fW",
         rhs = function()
           local word = vim.fn.expand("<cWORD>")
@@ -94,25 +77,18 @@ return {
           if git_root and #git_root > 0 then
             builtin.grep_string({
               cwd = git_root,
-              search = word
+              search = word,
             })
           else
             builtin.grep_string({
-              search = word
+              search = word,
             })
           end
-        end
+        end,
+        desc = "Find Current WORD",
       },
-      {
-        desc = "Help Tags",
-        lhs = "<leader>ht",
-        rhs = builtin.help_tags
-      },
-      {
-        desc = "Help Keymaps",
-        lhs = "<leader>hk",
-        rhs = builtin.keymaps
-      },
+      { lhs = "<leader>ht", rhs = builtin.help_tags, desc = "Help Tags" },
+      { lhs = "<leader>hk", rhs = builtin.keymaps, desc = "Help Keymaps" },
     })
   end,
 }

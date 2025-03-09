@@ -12,6 +12,6 @@ return {
       tailwind = false, -- TODO: enable when configure lsp
       mode = "virtualtext",
       virtualtext = "■",
-    }
-  }
+    },
+  },
 }

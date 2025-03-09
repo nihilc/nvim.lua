@@ -19,5 +19,5 @@ return {
     },
     show_help = false,
     show_keys = false,
-  }
+  },
 }

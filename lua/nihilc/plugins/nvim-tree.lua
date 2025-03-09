@@ -24,7 +24,7 @@ return {
             height = 25,
             row = 0,
             col = 999,
-          }
+          },
         },
       },
       git = {
@@ -67,7 +67,7 @@ return {
           "readme.md",
           "LICENSE",
           "dockerfile",
-          "Dockerfile"
+          "Dockerfile",
         },
         indent_markers = {
           enable = true,
@@ -104,10 +104,12 @@ return {
 
     keymaps.set({
       {
-        desc = "Toggle Explorer",
         lhs = "<leader>te",
-        rhs = function() vim.cmd("NvimTreeToggle") end,
-      }
+        rhs = function()
+          vim.cmd("NvimTreeToggle")
+        end,
+        desc = "Toggle Explorer",
+      },
     })
-  end
+  end,
 }

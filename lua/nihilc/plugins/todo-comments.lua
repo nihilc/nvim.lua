@@ -10,20 +10,14 @@ return {
     })
     keymaps.set({
       {
-        desc = "Find Todos",
         lhs = "<leader>ft",
-        rhs = function() vim.cmd("TodoTelescope") end
+        rhs = function()
+          vim.cmd("TodoTelescope")
+        end,
+        desc = "Find Todos",
       },
-      {
-        desc = "Next Todo",
-        lhs = "]t",
-        rhs = todo.jump_next
-      },
-      {
-        desc = "Prev",
-        lhs = "[t",
-        rhs = todo.jump_prev
-      },
+      { lhs = "]t", rhs = todo.jump_next, desc = "Next Todo" },
+      { lhs = "[t", rhs = todo.jump_prev, desc = "Prev Todo" },
     })
-  end
+  end,
 }
