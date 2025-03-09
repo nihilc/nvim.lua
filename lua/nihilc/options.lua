@@ -47,3 +47,8 @@ vim.o.softtabstop = 2 -- indent size
 vim.o.spell = true -- enable spell
 vim.o.spelloptions = "camel" -- fix camelCase spell
 vim.o.spelllang = "en,es" -- Spell languages
+-- Folding
+vim.o.foldmethod = "expr" -- Use expr to fold
+vim.o.foldenable = false -- disable folding at startup
+vim.o.foldlevelstart = 99 -- disable folding at startup
+vim.o.foldexpr = "nvim_treesitter#foldexpr()" -- use tree-sitter to fold
