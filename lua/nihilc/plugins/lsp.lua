@@ -92,7 +92,6 @@ return {
           { lhs = "gr",         rhs = vim.lsp.buf.references,     desc = "Go References",     opts = opts },
           { lhs = 'gi',         rhs = vim.lsp.buf.implementation, desc = "Go Implementation", opts = opts },
           { lhs = "<leader>lr", rhs = vim.lsp.buf.rename,         desc = "Lsp Rename",        opts = opts },
-          { lhs = "<leader>lf", rhs = vim.lsp.buf.format,         desc = "Lsp Format",        opts = opts },
           { lhs = "<leader>la", rhs = vim.lsp.buf.code_action,    desc = "Lsp Code Action",   opts = opts },
           { lhs = "<leader>ld", rhs = vim.diagnostic.open_float,  desc = "Lsp Diagnostics",   opts = opts },
           {
