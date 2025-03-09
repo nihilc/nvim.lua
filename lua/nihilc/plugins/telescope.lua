@@ -87,6 +87,19 @@ return {
         end,
         desc = "Find Current WORD",
       },
+      {
+        mode = "v",
+        lhs = "<leader>fg",
+        rhs = function()
+          local get_selection = function()
+            return vim.fn.getregion(vim.fn.getpos("."), vim.fn.getpos("v"), { mode = vim.fn.mode() })
+          end
+          builtin.live_grep({
+            default_text = table.concat(get_selection()),
+          })
+        end,
+        desc = "Live Grep",
+      },
       { lhs = "<leader>ht", rhs = builtin.help_tags, desc = "Help Tags" },
       { lhs = "<leader>hk", rhs = builtin.keymaps, desc = "Help Keymaps" },
     })
