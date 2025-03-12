@@ -19,6 +19,8 @@ M.set({
   { mode = { "n", "i" }, lhs = "<c-s>", rhs = "<cmd>w<cr>", desc = "Save File" },
   { mode = "t", lhs = "<esc><esc>", rhs = "<C-\\><C-n>", desc = "Exit terminal mode" },
   -- Navigation
+  { mode = "n", lhs = "j", rhs = "gj", desc = "Move down" },
+  { mode = "n", lhs = "k", rhs = "gk", desc = "Move up" },
   { mode = "i", lhs = "<c-h>", rhs = "<left>", desc = "Move left" },
   { mode = "i", lhs = "<c-l>", rhs = "<right>", desc = "Move right" },
   { mode = "i", lhs = "<c-j>", rhs = "<down>", desc = "Move down" },

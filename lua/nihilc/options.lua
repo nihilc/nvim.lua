@@ -36,7 +36,7 @@ vim.o.splitright = true -- new windows below current
 vim.o.splitbelow = true -- new windows right of current
 vim.o.pumheight = 10 -- pop-up height
 vim.o.pumblend = 0 -- pop-up transparency 0-100
-vim.o.wrap = false -- line wrap
+vim.o.wrap = true -- line wrap
 vim.o.breakindent = true -- wrapped lines continue visually indent
 -- Indentation
 vim.o.smartindent = true -- smart indent on new line
