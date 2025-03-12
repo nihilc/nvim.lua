@@ -8,6 +8,8 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 
+vim.g.markdown_recommended_style = 0
+
 -- General
 vim.o.clipboard = "unnamed" -- Use * register
 vim.o.termguicolors = true -- true color support

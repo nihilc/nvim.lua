@@ -37,7 +37,8 @@ return {
         "pyright",
         "lua_ls",
         "gopls",
-        -- Docs/Config
+        -- Docs / Config
+        "marksman",
         "texlab",
       },
       automatic_installation = false,
