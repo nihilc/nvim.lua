@@ -39,7 +39,6 @@ return {
         "gopls",
         -- Docs / Config
         "marksman",
-        "texlab",
       },
       automatic_installation = false,
       handlers = {
