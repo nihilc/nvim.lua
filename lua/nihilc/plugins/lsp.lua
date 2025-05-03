@@ -105,7 +105,7 @@ return {
           {
             lhs = "]d",
             rhs = function()
-              vim.diagnostic.jump({ count = 1 })
+              vim.diagnostic.jump({ count = 1, float = true })
             end,
             desc = "Next Diagnostic",
             opts = opts,
@@ -113,7 +113,7 @@ return {
           {
             lhs = "[d",
             rhs = function()
-              vim.diagnostic.jump({ count = -1 })
+              vim.diagnostic.jump({ count = -1, float = true })
             end,
             desc = "Prev Diagnostic",
             opts = opts,
