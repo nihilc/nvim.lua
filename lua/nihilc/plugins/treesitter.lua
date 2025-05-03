@@ -17,6 +17,7 @@ return {
         "python",
         "lua",
         "go",
+        "rust",
         "typst",
         -- Docs / Config
         "markdown",
