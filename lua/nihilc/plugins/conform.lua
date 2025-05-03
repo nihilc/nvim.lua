@@ -20,6 +20,7 @@ return {
         sh = { "shfmt" },
         python = { "black" },
         lua = { "stylua" },
+        typst = { "typstyle" },
         -- Docs / Config
         markdown = { "prettier" },
       },

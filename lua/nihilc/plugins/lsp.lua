@@ -37,6 +37,7 @@ return {
         "pyright",
         "lua_ls",
         "gopls",
+        "tinymist",
         -- Docs / Config
         "marksman",
       },

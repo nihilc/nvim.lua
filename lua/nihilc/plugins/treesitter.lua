@@ -17,6 +17,7 @@ return {
         "python",
         "lua",
         "go",
+        "typst",
         -- Docs / Config
         "markdown",
         "markdown_inline",
