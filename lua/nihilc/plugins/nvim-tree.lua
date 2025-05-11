@@ -104,11 +104,11 @@ return {
 
     keymaps.set({
       {
-        lhs = "<leader>te",
+        lhs = "<leader>e",
         rhs = function()
           vim.cmd("NvimTreeToggle")
         end,
-        desc = "Toggle Explorer",
+        desc = "Explorer",
       },
     })
   end,

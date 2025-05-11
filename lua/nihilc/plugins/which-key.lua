@@ -8,7 +8,7 @@ return {
       { "<leader>g", group = "git", mode = { "n", "v" } },
       { "<leader>h", group = "help" },
       { "<leader>l", group = "lsp" },
-      { "<leader>t", group = "toggle" },
+      { "<leader>t", group = "typst" },
       { "<leader>u", group = "ui" },
     },
     win = {

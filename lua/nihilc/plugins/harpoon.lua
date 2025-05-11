@@ -9,7 +9,7 @@ return {
     harpoon:setup()
     keymaps.set({
       {
-        lhs = "<leader>e",
+        lhs = "<leader>q",
         rhs = function()
           harpoon.ui:toggle_quick_menu(harpoon:list())
         end,
