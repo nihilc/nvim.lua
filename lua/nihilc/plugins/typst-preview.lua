@@ -7,7 +7,7 @@ return {
     local keymaps = require("nihilc.keymaps")
 
     tp.setup({
-      invert_colors = "auto",
+      -- invert_colors = "auto",
       dependencies_bin = {
         ["tinymist"] = "tinymist",
         ["websocat"] = nil,

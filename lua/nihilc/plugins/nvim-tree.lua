@@ -59,12 +59,14 @@ return {
         root_folder_label = function(path)
           return "../" .. vim.fn.fnamemodify(path, ":t")
         end,
-        group_empty = true,
+        group_empty = false,
         highlight_git = false,
         special_files = {
           "Makefile",
           "README.md",
           "readme.md",
+          "TODO.md",
+          "todo.md",
           "LICENSE",
           "dockerfile",
           "Dockerfile",
