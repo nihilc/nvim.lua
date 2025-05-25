@@ -12,7 +12,7 @@ return {
       hijack_unnamed_buffer_when_opening = false,
       filters = {
         dotfiles = true,
-        custom = { "node_modules", "\\.cache", ".git", "dist" },
+        custom = { "node_modules", "\\.cache", "\\.git", "dist" },
       },
       view = {
         float = {
@@ -108,7 +108,7 @@ return {
       {
         lhs = "<leader>e",
         rhs = function()
-          vim.cmd("NvimTreeToggle")
+          vim.cmd("NvimTreeFindFileToggle")
         end,
         desc = "Explorer",
       },
