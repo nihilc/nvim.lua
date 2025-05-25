@@ -11,8 +11,9 @@ return {
       hijack_cursor = true,
       hijack_unnamed_buffer_when_opening = false,
       filters = {
-        dotfiles = true,
+        dotfiles = false,
         custom = { "node_modules", "\\.cache", "\\.git", "dist" },
+        exclude = { ".gitignore", ".gitkeep" },
       },
       view = {
         float = {
