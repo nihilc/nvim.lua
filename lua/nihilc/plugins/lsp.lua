@@ -37,7 +37,6 @@ return {
         "pyright",
         "lua_ls",
         "gopls",
-        "rust_analyzer",
         "tinymist",
         -- Docs / Config
         "marksman",
