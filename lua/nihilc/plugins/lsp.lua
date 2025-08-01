@@ -50,6 +50,20 @@ return {
         end,
       },
     })
+    require("lspconfig").nixd.setup({
+      cmd = { "nixd" },
+      capabilities = capabilities,
+      settings = {
+        nixd = {
+          nixpkgs = {
+            expr = "import <nixpkgs> { }",
+          },
+          formatting = {
+            command = { "nixfmt" }, -- alejandra or nixfmt or nixpkgs-fmt
+          },
+        },
+      },
+    })
 
     vim.diagnostic.config({
       float = {
