@@ -25,6 +25,7 @@ return {
     lazy = false,
     config = function()
       require("kanagawa").setup({
+        transparent = true,
         colors = {
           theme = {
             all = {
