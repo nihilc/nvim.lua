@@ -11,7 +11,7 @@ vim.g.loaded_perl_provider = 0
 vim.g.markdown_recommended_style = 0
 
 -- General
-vim.o.clipboard = "" -- Use default register
+vim.o.clipboard = "unnamedplus" -- Use global register
 vim.o.termguicolors = true -- true color support
 vim.o.ignorecase = true -- ignore case in search
 vim.o.smartcase = true -- Override ignore case if search has upper case
