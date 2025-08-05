@@ -13,6 +13,7 @@ return {
     },
     win = {
       title = true,
+      border = "single",
     },
     icons = {
       mappings = false,
