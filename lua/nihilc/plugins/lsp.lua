@@ -35,9 +35,9 @@ return {
         -- Languages
         "bashls",
         "pyright",
-        "lua_ls",
-        "gopls",
-        "tinymist",
+        -- "lua_ls",
+        -- "gopls",
+        -- "tinymist",
         -- Docs / Config
         "marksman",
       },
@@ -49,6 +49,15 @@ return {
           })
         end,
       },
+    })
+    require("lspconfig").lua_ls.setup({
+      capabilities = capabilities,
+    })
+    require("lspconfig").gopls.setup({
+      capabilities = capabilities,
+    })
+    require("lspconfig").tinymist.setup({
+      capabilities = capabilities,
     })
     require("lspconfig").nixd.setup({
       cmd = { "nixd" },
