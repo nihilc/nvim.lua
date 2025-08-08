@@ -41,6 +41,7 @@ return {
             NormalFloat = { bg = "none" },
             FloatBorder = { bg = "none" },
             FloatTitle = { bg = "none" },
+            TelescopeBorder = { bg = "none" },
             IblIndent = { fg = colors.palette.sumiInk4 },
             NvimTreeIndentMarker = { fg = colors.palette.sumiInk4 },
           }
