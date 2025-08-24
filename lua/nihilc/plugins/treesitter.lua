@@ -20,6 +20,7 @@ return {
         "rust",
         "typst",
         -- Docs / Config
+        "nix",
         "markdown",
         "markdown_inline",
         "vimdoc",
