@@ -36,6 +36,34 @@ return {
         end,
         desc = "Harpoon Prev",
       },
+      {
+        lhs = "<leader>1",
+        rhs = function()
+          harpoon:list():select(1)
+        end,
+        desc = "Harpoon Prev",
+      },
+      {
+        lhs = "<leader>2",
+        rhs = function()
+          harpoon:list():select(2)
+        end,
+        desc = "Harpoon Prev",
+      },
+      {
+        lhs = "<leader>3",
+        rhs = function()
+          harpoon:list():select(3)
+        end,
+        desc = "Harpoon Prev",
+      },
+      {
+        lhs = "<leader>4",
+        rhs = function()
+          harpoon:list():select(4)
+        end,
+        desc = "Harpoon Prev",
+      },
     })
   end,
 }
