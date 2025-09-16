@@ -1,7 +1,32 @@
 return {
   "3rd/image.nvim",
-  build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
-  opts = {
-    processor = "magick_cli",
-  },
+  build = false,
+  config = function()
+    local image = require("image")
+    local keymaps = require("nihilc.keymaps")
+
+    image.setup({
+      backend = "kitty",
+      processor = "magick_cli",
+      integrations = {
+        typst = {
+          enabled = true,
+          filetypes = { "typst" },
+        },
+      },
+    })
+    keymaps.set({
+      {
+        lhs = "<leader>ui",
+        rhs = function()
+          if image.is_enabled() then
+            image.disable()
+          else
+            image.enable()
+          end
+        end,
+        desc = "UI Toggle image",
+      },
+    })
+  end,
 }
