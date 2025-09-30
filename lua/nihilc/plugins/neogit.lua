@@ -8,7 +8,9 @@ return {
     local neogit = require("neogit")
     local keymaps = require("nihilc.keymaps")
 
-    neogit.setup({})
+    neogit.setup({
+    disable_hint = true,
+    })
     keymaps.set({
       { lhs = "<leader>gg", rhs = neogit.open, desc = "Git Status" },
     })
